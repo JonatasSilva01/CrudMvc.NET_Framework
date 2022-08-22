@@ -48,6 +48,12 @@ namespace WebMvC
                 "paginas/{id}/alterar",
                 new { controller = "Paginas", action = "Alterar", id= 0 }
             );
+            
+            routes.MapRoute(
+                "paginas_excluir",
+                "paginas/{id}/excluir",
+                new { controller = "Paginas", action = "Excluir", id= 0 }
+            );
 
             routes.MapRoute(
                 "paginas_alterando",

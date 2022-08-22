@@ -35,6 +35,11 @@ namespace WebMvC.Controllers
 
             Response.Redirect("/Paginas");
         }
+        public void Excluir(int id)
+        {
+            Pagina.Excluir(id);
+            Response.Redirect("/Paginas");
+        }
 
 
         public ActionResult Alterar(int id)

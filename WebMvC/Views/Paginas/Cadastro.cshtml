@@ -4,6 +4,17 @@
     List<Business.Pagina> paginas = ViewBag.Paginas;
 }
 
+@if (TempData["Sucesso"] != null)
+{
+    <div class="alert alert-success">@TempData["Sucesso"]</div>
+}
+
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger">@TempData["Erro"]</div>
+}
+
+
 <div class="jumbotron">
     <h1>Paginas</h1>
     <div class="row">
@@ -20,7 +31,7 @@
             <td></td>
         </tr>
 
-        @foreach(var p in paginas)
+        @foreach (var p in paginas)
         {
             <tr>
                 <td>@p.Id</td>
@@ -28,6 +39,10 @@
                 <td>@p.Data</td>
                 <td>
                     <a class="btn btn-primary" href="/paginas/@p.Id/alterar">Alterar</a>
+                </td>
+
+                <td>
+                    <a class="btn btn-danger" href="/paginas/@p.Id/excluir" onclick="ValidaExclusao(@p.Id, event)">Excluir</a>
                 </td>
             </tr>
         }

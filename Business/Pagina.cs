@@ -32,6 +32,7 @@ namespace Business
             return lista;
         }
 
+
         public static Pagina BuscarPorId(int id)
         {
             var pagina = new Pagina();
@@ -50,6 +51,11 @@ namespace Business
         public void Save()
         {
             new Database.Pagina().Salvar(this.Id, this.Nome, this.Conteudo, this.Data);
+        }
+
+        public static void Excluir(int id)
+        {
+            new Database.Pagina().Excluir(id);
         }
     }
 }

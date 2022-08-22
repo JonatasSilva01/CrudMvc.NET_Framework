@@ -49,6 +49,17 @@ namespace Database
             }
         }
 
+        public void Excluir(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(sqlConn()))
+            {
+                string queryString = $"DELETE FROM Pagina WHERE Id = {id}; ";
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
         public DataTable BucarPorId(int id)
         {
             using (SqlConnection connection = new SqlConnection(sqlConn()))

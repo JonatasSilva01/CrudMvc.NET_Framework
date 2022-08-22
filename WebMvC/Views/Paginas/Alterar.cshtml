@@ -2,16 +2,6 @@
     Business.Pagina paginas = ViewBag.Pagina;
 }
 
-@if (TempData["Sucesso"] != null)
-{
-    <div class="alert alert-success">@TempData["Sucesso"]</div>
-}
-
-@if (TempData["Erro"] != null)
-{
-    <div class="alert alert-danger">@TempData["Erro"]</div>
-}
-
 <div class="jumbotron">
     <h1>Alterar Dados</h1>
 
