@@ -1,0 +1,43 @@
+﻿@{
+    Business.Pagina paginas = ViewBag.Pagina;
+}
+
+@if (TempData["Sucesso"] != null)
+{
+    <div class="alert alert-success">@TempData["Sucesso"]</div>
+}
+
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger">@TempData["Erro"]</div>
+}
+
+<div class="jumbotron">
+    <h1>Alterar Dados</h1>
+
+    <div class="row">
+        <div class="col-md-12" style="display: flex; justify-content:end; padding: 10px;">
+            <a class="btn btn-warning" href="/Paginas">Voltar</a>
+        </div>
+    </div>
+
+    <form action="/paginas/@paginas.Id/alterando" method="post">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" value="@paginas.Nome" name="nome" id="nome" aria-describedby="nomeHelp" placeholder="Digite o Nome">
+            <small class="form-text text-muted">Digite o nome aqui nessa caixa de texto</small>
+        </div>
+        <div class="form-group">
+            <label for="data">Data</label>
+            <input type="datetime" class="form-control" value="@paginas.Data" name="data" id="data">
+            <small class="form-text text-muted">Colocar a data de cadastro</small>
+        </div>
+        <div class="form-group">
+            <label for="conteudos">Conteudo</label>
+            <textarea id="conteudos" name="conteudos" class="form-control">@paginas.Conteudo</textarea>
+            <small class="form-text text-muted">Colocar o conteudo da Pagina</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Alterar Registro</button>
+    </form>
+
+</div>
