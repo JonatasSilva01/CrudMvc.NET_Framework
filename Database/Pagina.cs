@@ -37,10 +37,9 @@ namespace Database
         {
             using (SqlConnection connection = new SqlConnection(sqlConn()))
             {
-                string queryString = $"INSERT INTO Pagina (Nome, Data, Conteudos) values('{nome}','" + data.ToString("yyyy/MM/dd HH:mm:sss") + $"','{conteudo}'); ";
+                string queryString = $"INSERT INTO Pagina (Nome, Data, Conteudos) values('{nome}','" + data + $"','{conteudo}'); ";
                 if(id != 0)
                 {
-                    //queryString = $"update pagina set Nome='{nome}', Conteudos='{conteudo}', Data='"+data.ToString("yyyy/MM/dd HH:mm:sss") + $"' where Id='{id}'; ";
                     queryString = $"update Pagina set nome='{nome}', data='"+ data +$"', conteudos='{conteudo}' where id ='{id}'; ";
                 }
                 SqlCommand command = new SqlCommand(queryString, connection);
