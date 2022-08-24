@@ -22,6 +22,7 @@ namespace WebMvC.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public void Criar()
         {
             DateTime data;
@@ -41,7 +42,6 @@ namespace WebMvC.Controllers
             Response.Redirect("/Paginas");
         }
 
-
         public ActionResult Alterar(int id)
         {
             var pagina = Pagina.BuscarPorId(id);
@@ -49,7 +49,15 @@ namespace WebMvC.Controllers
             return View();
         }
 
+        public ActionResult Preview(int id)
+        {
+            var pagina = Pagina.BuscarPorId(id);
+            ViewBag.Pagina = pagina;
+            return View();
+        }
+
         [HttpPost]
+        [ValidateInput(false)]
         public void Alterando(int id)
         {
             try 
@@ -66,9 +74,9 @@ namespace WebMvC.Controllers
 
                 TempData["sucesso"] = "Pagina Alterada com Sucesso";
             }
-            catch
+            catch(Exception ex)
             {
-                TempData["erro"] = "Pagina não pode alterada";
+                TempData["erro"] =  $"{ex.Message}";
             }
 
             Response.Redirect("/Paginas");

@@ -28,6 +28,7 @@
             <td>ID</td>
             <td>NOME</td>
             <td>DATA</td>
+            <td>Render</td>
             <td></td>
         </tr>
 
@@ -37,6 +38,11 @@
                 <td>@p.Id</td>
                 <td>@p.Nome</td>
                 <td>@p.Data</td>
+
+                <td>
+                    <a class="btn btn-warning" target="_blank" href="/paginas/@p.Id/Preview">Preview</a>
+                </td>
+
                 <td>
                     <a class="btn btn-primary" href="/paginas/@p.Id/alterar">Alterar</a>
                 </td>

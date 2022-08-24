@@ -62,6 +62,12 @@ namespace WebMvC
             );
 
             routes.MapRoute(
+                "paginas_preview",
+                "paginas/{id}/preview",
+                new { controller = "Paginas", action = "Preview", id=0 }
+            );
+
+            routes.MapRoute(
                 "paginas_novocadastro",
                 "paginas/novocadastro",
                 new { controller = "Paginas", action = "NovoCadastro" }

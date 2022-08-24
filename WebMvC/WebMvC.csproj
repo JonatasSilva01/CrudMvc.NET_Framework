@@ -167,6 +167,8 @@
     <Content Include="Views\Paginas\Cadastro.cshtml" />
     <Content Include="Views\Paginas\NovoCadastro.cshtml" />
     <Content Include="Views\Paginas\Alterar.cshtml" />
+    <Content Include="Views\Paginas\Preview.cshtml" />
+    <Content Include="Views\Shared\_Render .cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
