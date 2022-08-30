@@ -74,6 +74,18 @@ namespace WebMvC
             );
 
             routes.MapRoute(
+                 "consulta_cep",
+                 "consulta_cep",
+                 new { controller = "Cep", action = "CepIndex" }
+             );
+
+            routes.MapRoute(
+                "api_consulta_cep",
+                "api/consulta-cep/{cep}",
+                new { controller = "Cep", action = "Consulta", cep = "" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

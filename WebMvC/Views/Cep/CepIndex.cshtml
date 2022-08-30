@@ -1,0 +1,43 @@
+﻿@Scripts.Render("~/Scripts/jquery-3.4.1.js");
+@Scripts.Render("~/Scripts/cep.js");
+
+@{
+    ViewBag.Title = "CEP";
+    Business.Cep cep = ViewBag.Cep;
+}
+
+<div class="jumbotron">
+    <h1>Paginas</h1>
+    <div class="row">
+        <div class="col-md-12" style="display: flex; justify-content:end; padding: 10px;">
+            <a class="btn btn-warning" href="/Paginas">Voltar</a>
+        </div>
+    </div>
+
+    <form action="">
+        <div class="form-group">
+            <label for="nome">CEP</label>
+            <input type="text" class="form-control" name="cep" id="cep" placeholder="EX:04421130" value="@cep.CEP">
+            <small class="form-text text-muted">Digite o CEP do bairro</small>
+        </div>
+        <div class="form-group">
+            <label>Endereco</label>
+            <input type="text" class="form-control" name="endereco" id="endereco" value="@cep.Endereco">
+        </div>
+        <div class="form-group">
+            <label>Bairro</label>
+            <input type="text" class="form-control" name="bairro" id="bairro" value="@cep.Bairro">
+        </div>
+        <div class="form-group">
+            <label>Cidade</label>
+            <input type="text" class="form-control" name="cidade" id="cidade" value="@cep.Cidade">
+        </div>
+        <div class="form-group">
+            <label>Estado</label>
+            <input type="text" class="form-control" name="estado" id="estado" value="@cep.Estado">
+        </div>
+
+        @*<button type="submit" class="btn btn-primary">Salvar Novo Cadastro</button>*@
+    </form>
+
+</div>
