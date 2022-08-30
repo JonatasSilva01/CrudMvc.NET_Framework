@@ -12,7 +12,8 @@ namespace WebMvC.Controllers
     {
         public ActionResult CepIndex()
         {
-            ViewBag.Cep = Business.Cep.Busca("04421130");
+            string empty = string.Empty;
+            ViewBag.Cep = Business.Cep.Busca(empty);
             return View();
         }
 
@@ -20,13 +21,6 @@ namespace WebMvC.Controllers
         {
             var cepObj = Business.Cep.Busca(cep);
             return new JavaScriptSerializer().Serialize(cepObj);
-        }
-
-        public ActionResult About(int id)
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
         }
     }
 }
